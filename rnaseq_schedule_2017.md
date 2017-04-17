@@ -21,6 +21,6 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 | 1:30 |  <font color="purple">Module 2: RNA-Seq Alignment and Visualization (Fouad)</font> | 1:00 | <font color="purple">Module 4: Reference Free Alignment (Malachi)</font> | 1:00 | <font color="purple">Module 7: Functional Annotation and Analysis of Transcripts (Brian)</font> |  
 | | | 1:30 | <font color="purple">Module 5: Isoform Discovery and Alternative Expression (Malachi)</font> | | |  
 | 3:00 | <font color="green">*Coffee Break*</font> | 3:00 | <font color="green">*Coffee Break*</font> | 2:30 | <font color="green">*Coffee Break*</font> |  
-| 3:30 |  <font color="blue">Module 2 Lab</font> | 3:30 | <font color="blue">Module 5 Lab</font> | 3:30 | <font color="blue">Module 7 Lab</font> |  
-| 5:00 | <font color="green">*Dinner*</font> | 5:00 | <font color="green">*Dinner*</font> | 4:30 | <font color="purple">Suvey and Closing Remarks (Ann)</font> |  
+| 3:30 |  <font color="blue">Module 2 Lab</font> | 3:30 | <font color="blue">Module 5 Lab</font> | 3:00 | <font color="blue">Module 7 Lab</font> |  
+| 5:00 | <font color="green">*Dinner*</font> | 5:00 | <font color="green">*Dinner*</font> | 5:00 | <font color="purple">Suvey and Closing Remarks (Ann)</font> |  
 | 6:00 | **Integrated Assignment** | 6:00 | **Integrated Assignment** | | |  
