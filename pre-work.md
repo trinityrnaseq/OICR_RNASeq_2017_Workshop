@@ -9,20 +9,30 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 ---
 
 ## Read these before coming to the workshop:
+* [Informatics for RNA Sequencing: A Web Resource for Analysis on the Cloud](https://www.ncbi.nlm.nih.gov/pubmed/26248053)  
 
 * [Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration](http://www.ncbi.nlm.nih.gov/pubmed/22517427)
 
-* [Differential gene and transcript expression analysis of RNA-seq experiments with TopHat and Cufflinks](http://www.ncbi.nlm.nih.gov/pubmed/22383036)
+* [Transcript-level expression analysis of RNA-seq experiments with HISAT, StringTie and Ballgown](https://www.ncbi.nlm.nih.gov/pubmed/27560171)
   
 * [ENCODE RNA-Seq Standards](https://genome.ucsc.edu/ENCODE/protocols/dataStandards/ENCODE_RNAseq_Standards_V1.0.pdf)
   
-* [Methods to study splicing from high-throughput RNA sequencing data](http://www.ncbi.nlm.nih.gov/pubmed/24549677)
-  
-* [Differential analysis of gene regulation at transcript resolution with RNA-seq](http://www.ncbi.nlm.nih.gov/pubmed/23222703)
+* [Methods to study splicing from high-throughput RNA sequencing data](http://www.ncbi.nlm.nih.gov/pubmed/24549677)  
   
 * [A comprehensive assessment of RNA-seq accuracy, reproducibility and information content by the Sequencing Quality Control Consortium](http://www.ncbi.nlm.nih.gov/pubmed/25150838)
   
-* [Recurrent chimeric RNAs enriched in human prostate cancer identified by deep sequencing](http://www.ncbi.nlm.nih.gov/pubmed/21571633)
+## Optional readings:
+
+* [HISAT: a fast spliced aligner with low memory requirements](https://www.ncbi.nlm.nih.gov/pubmed/25751142)  
+
+* [StringTie enables improved reconstruction of a transcriptome from RNA-seq reads](https://www.ncbi.nlm.nih.gov/pubmed/25690850)  
+
+* [Ballgown bridges the gap between transcriptome assembly and expression analysis](https://www.ncbi.nlm.nih.gov/pubmed/25748911)  
+
+* [HTSeq--a Python framework to work with high-throughput sequencing data](https://www.ncbi.nlm.nih.gov/pubmed/25260700)  
+
+* [edgeR: a Bioconductor package for differential expression analysis of digital gene expression data](https://www.ncbi.nlm.nih.gov/pubmed/19910308)  
+
 
 ## Do these before coming to the workshop:
 
@@ -68,4 +78,8 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 
 7) SCP/SFTP client - We will be moving data from the servers to the student laptops for visualization. Mac and Linux users already have a command line scp and sftp program. For Windows users, please install [WinSCP](http://winscp.net/eng/download.php).
 
-8) A PDF viewer (Adobe Acrobat or equivalent).
+8) A PDF viewer (Adobe Acrobat or equivalent).  
+
+## Additional Optional Resources 
+
+Additional resources can be found on the [RNA-Seq wiki](https://github.com/griffithlab/rnaseq_tutorial/wiki/Resources).
