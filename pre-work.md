@@ -20,7 +20,10 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 * [Methods to study splicing from high-throughput RNA sequencing data](http://www.ncbi.nlm.nih.gov/pubmed/24549677)  
   
 * [A comprehensive assessment of RNA-seq accuracy, reproducibility and information content by the Sequencing Quality Control Consortium](http://www.ncbi.nlm.nih.gov/pubmed/25150838)
-  
+
+* [De novo transcript sequence reconstruction from RNA-seq using the Trinity platform for reference generation and analysis](http://www.nature.com/nprot/journal/v8/n8/full/nprot.2013.084.html)
+
+
 ## Optional readings:
 
 * [HISAT: a fast spliced aligner with low memory requirements](https://www.ncbi.nlm.nih.gov/pubmed/25751142)  
@@ -33,6 +36,7 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 
 * [edgeR: a Bioconductor package for differential expression analysis of digital gene expression data](https://www.ncbi.nlm.nih.gov/pubmed/19910308)  
 
+* [Full-length transcriptome assembly from RNA-Seq data without a reference genome](http://www.nature.com/nbt/journal/v29/n7/abs/nbt.1883.html)  
 
 ## Do these before coming to the workshop:
 
