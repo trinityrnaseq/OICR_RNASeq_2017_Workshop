@@ -12,13 +12,14 @@ my $FULL_CLEAN = $ARGV[0] || 0;
 chdir $FindBin::Bin or die "error, cannot cd to $FindBin::Bin";
 
 
-
-
 my @files_to_keep = qw (
 README.md
 runTrinityDemo.pl
 cleanme.pl
 Trinotate.sqlite
+environment.txt
+Morning_denovo_assembly.md
+Afternoon_functional_annotation.md
 );                      
 
 
