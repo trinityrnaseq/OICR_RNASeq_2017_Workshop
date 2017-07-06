@@ -17,7 +17,7 @@ TMHMM_PROG=tmhmm
 
 # dbs
 SWISSPROT_PEP=../data/mini_sprot.pep
-PFAM_DB=../../trinotate_databases/Pfam-A.hmm
+PFAM_DB=../data/trinotate_data/Pfam-A.hmm
 TRINOTATE_BOILERPLATE=../../trinotate_databases/Trinotate.sqlite
 
 

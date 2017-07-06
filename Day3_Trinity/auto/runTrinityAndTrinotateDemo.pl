@@ -70,9 +70,8 @@ my $workdir = cwd();
 ## first check for tools needed.
 
 my @tools = qw (Trinity
-    bowtie
+    bowtie2
     samtools
-    igv.sh
     TransDecoder.LongOrfs
     TransDecoder.Predict
 );
@@ -202,7 +201,7 @@ foreach my $condition (sort keys %samples) {
             . " --left $left_fq --right $right_fq "
             . " --transcripts trinity_out_dir/Trinity.fasta "
             . " --output_prefix $sample --est_method RSEM "
-            . " --aln_method bowtie --trinity_mode --prep_reference --coordsort_bam "
+            . " --aln_method bowtie2 --trinity_mode --prep_reference "
             . " --output_dir $output_dir";
         
         &process_cmd($align_estimate_command, "$checkpoints_dir/$sample.align_estimate.ok");
@@ -249,11 +248,13 @@ close $ofh; # samples.txt
 
 ## Examine read alignments in IGV
 
-my $igv_cmd = "igv.sh -g trinity_out_dir/Trinity.fasta " . join(",", @bam_files);
-if ($AUTO_MODE) {
-    $igv_cmd .= " & ";
-}
-&process_cmd($igv_cmd, "$checkpoints_dir/igv_trinity_reads.ok");
+print "\n\n\t** View data using IGV:\n\tgenome: trinity_out_dir/Trinity.fasta\n\tbams: @bam_files\n\n";
+
+#my $igv_cmd = "igv.sh -g trinity_out_dir/Trinity.fasta " . join(",", @bam_files);
+#if ($AUTO_MODE) {
+#    $igv_cmd .= " & ";
+#}
+#&process_cmd($igv_cmd, "$checkpoints_dir/igv_trinity_reads.ok");
 
 
 ##############
@@ -345,7 +346,7 @@ sub process_cmd {
     }
     
     $STEP_COUNT++;
-    $checkpoint .= "s_" . sprintf("%02i", $STEP_COUNT);
+    #$checkpoint .= "s_" . sprintf("%02i", $STEP_COUNT);
     
 
     if (-e $checkpoint) { return; }
@@ -387,6 +388,12 @@ sub process_cmd {
 sub show {
     my ($image) = @_;
 
+    print "\n\n\t**  view image file: $image\n\n";
+
+    return;
+
+    
+    
     my $cmd;
 
     if ($OS_type =~ /linux/i) {
