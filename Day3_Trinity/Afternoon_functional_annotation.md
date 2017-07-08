@@ -178,12 +178,12 @@ As a sanity check, be sure you're currently located in your 'Trinotate/' working
     % pwd
 .
 
-    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017/Trinotate   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    /home/ubuntu/workspace/trinity_workspace/Trinotate
 
 
 Copy the provided Trinotate.sqlite boilerplate database into your Trinotate working directory like so:
 
-     %  cp ../../trinotate_databases/Trinotate.sqlite  Trinotate.sqlite
+     %  cp ~/CourseData/RNA_data/trinity_trinotate_tutorial/trinotate_data/Trinotate.boilerplate.sqlite  Trinotate.sqlite
 
 
 
