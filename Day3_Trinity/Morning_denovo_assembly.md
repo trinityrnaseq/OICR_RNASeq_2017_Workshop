@@ -809,8 +809,7 @@ Be sure you're in your base working directory:
 
 .
    
-    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017
-    #### --- must update !!!
+    /home/ubuntu/workspace/trinity_workspace
 
 Now, run the DE analysis at the gene level like so:
 
