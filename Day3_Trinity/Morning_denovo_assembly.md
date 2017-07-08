@@ -765,11 +765,8 @@ Included among these files are:
 
     % wc -l diffExpr.P1e-3_C2.matrix
 
-.
 
-    124 diffExpr.P1e-3_C2.matrix
-
-Note, the number of lines in this file includes the top line with column names, so there are actually 123 DE transcripts at this 4-fold and 1e-3 FDR threshold cutoff.
+Note, the number of lines in this file includes the top line with column names, so there are actually 1 fewer DE transcripts at this 4-fold and 1e-3 FDR threshold cutoff.
 
 Also included among these files is a heatmap 'diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf' as shown below, with transcripts clustered along the vertical axis and samples clustered along the horizontal axis.
 
