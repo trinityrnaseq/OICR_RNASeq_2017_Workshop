@@ -126,6 +126,9 @@ Using our predicted protein sequences, let's also run a HMMER search against the
 
 The signalP and tmhmm software tools are very useful for predicting signal peptides (secretion signals) and transmembrane domains, respectively.
 
+#### Signal peptide prediction
+
+
 To predict signal peptides, run signalP like so:
 
     % signalp -f short -n signalp.out Trinity.fasta.transdecoder.pep
@@ -144,6 +147,24 @@ Take a look at the output file:
     ....
 
 >How many of your proteins are predicted to encode signal peptides?
+
+#### Transmembrane domain prediction
+
+Run TMHMM to predict transmembrane regions like so:
+
+    % tmhmm --short < Trinity.fasta.transdecoder.pep > tmhmm.out
+
+and examine the output:
+
+    % less tmhmm.out
+
+.
+
+    TRINITY_DN283_c0_g1::TRINITY_DN283_c0_g1_i1::g.162::m.162       len=308 ExpAA=126.66    First60=11.42   PredHel=6       Topology=o49-71i105-124o134-153i160-182o192-214i227-246o
+    TRINITY_DN283_c0_g1::TRINITY_DN283_c0_g1_i2::g.163::m.163       len=384 ExpAA=152.47    First60=16.21   PredHel=7       Topology=o44-66i100-119o129-148i155-177o187-209i222-241o344-366i
+    TRINITY_DN283_c0_g2::TRINITY_DN283_c0_g2_i1::g.164::m.164       len=173 ExpAA=66.94     First60=24.48   PredHel=3       Topology=o35-57i70-92o96-118i
+    TRINITY_DN284_c0_g2::TRINITY_DN284_c0_g2_i1::g.214::m.214       len=144 ExpAA=0.06      First60=0.04    PredHel=0       Topology=i
+    TRINITY_DN285_c0_g1::TRINITY_DN285_c0_g1_i1::g.176::m.176       len=100 ExpAA=0.01      First60=0.01    PredHel=0       Topology=o
 
 
 ## Preparing and Generating a Trinotate Annotation Report
