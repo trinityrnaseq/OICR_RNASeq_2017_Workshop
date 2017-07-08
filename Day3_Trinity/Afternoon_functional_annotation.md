@@ -314,7 +314,7 @@ You should see a web form like so:
 
 <img src="images/TrinotateWeb_entrypoint2017.png" width=450 />
 
-In the text box, put the path to your Trinotate.sqlite database, as shown above ("/home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017/Trinotate/Trinotate.sqlite").  Click 'Submit'.
+In the text box, put the path to your Trinotate.sqlite database, as shown above ("/home/ubuntu/workspace/trinity_workspace/Trinotate/Trinotate.sqlite").  Click 'Submit'.
 
 You should now have TrinotateWeb running and serving the content in your Trinotate database:
 

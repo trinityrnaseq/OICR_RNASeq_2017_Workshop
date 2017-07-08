@@ -500,7 +500,7 @@ It's useful to perform certain downstream analyses, such as differential express
 
 The above RSEM quantitation generated 'gene' expression estimates in addition to the 'isoform' estimates.  The 'gene' estimates are in output files named '*.genes.results' instead of the '*.isoforms.results', and the output formats are similar.
 
-You should now be in the '/home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017' directory. (You can verify this with the 'pwd' command).
+You should now be in the '/home/ubuntu/workspace/trinity_workspace' directory. (You can verify this with the 'pwd' command).
 
 Build a 'gene' expression count matrix and TMM-normalized expression matrix like so:
 
