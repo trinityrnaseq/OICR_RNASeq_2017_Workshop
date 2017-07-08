@@ -206,6 +206,9 @@ Load in the various outputs generated earlier:
 
     %  $TRINOTATE_HOME/Trinotate Trinotate.sqlite LOAD_signalp signalp.out
 
+    % $TRINOTATE_HOME/Trinotate Trinotate.sqlite LOAD_tmhmm tmhmm.out
+
+
 ### Generate the Trinotate Annotation Report
 
     % $TRINOTATE_HOME/Trinotate Trinotate.sqlite report > Trinotate.xls
