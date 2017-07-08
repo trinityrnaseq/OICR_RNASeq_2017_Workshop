@@ -22,43 +22,50 @@ The following details the steps involved in:
 *   Examining functional enrichments for DE transcripts using GOseq
 *   Interactively Exploring annotations and expression data via TrinotateWeb
 
-All required software and data are provided pre-installed on the Amazon EC2 AMI 'XXXXXXXXX'. Be sure to have a running instance on at least an m4.large instance type, so we'll have adequate computational resources allocated in addition to reasonable response times over the network.
+All required software and data are provided pre-installed on an Amazon EC2 AMI.
 
-The workshop materials here expect that you have a minimal familiarity with UNIX.
+The workshop materials here expect that you have basic familiarity with UNIX.
 
-After launching and connecting to your running instance of the AMI, change your working directory to the base directory of these workshop materials.  We'll get there by moving down three directories:
+After launching and connecting to your running instance of the AMI, change your working directory to your workspace:
 
-        %  cd workshop_materials
+    % cd ~/workspace
 
-        %  cd transcriptomics
+and for the sake of organization, create a directory called 'trinity_workspace' that you'll work in for today's exercises.
 
-        %  cd KrumlovTrinityWorkshopJan2017
+    % mkdir trinity_workspace
 
->Yes, you could have just 'cd workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017', but here we're taking the slower scenic route. Feel free to look around and run 'ls' to see what other files or directories are there along the way and get a feel for where you are in the file system - which is particularly useful if you're new to unix.
-
-This 'KrumlovTrinityWorkshopJan2017' will be the base working directory for all the exercises below. We'll create other subdirectories here and move back and forth to our various workspaces that we generate along the way.
+    % cd trinity_workspace
 
 
 ## Before We Begin
 
-Below, we refer to '%' as the terminal command prompt, and we use environmental variables such as $TRINITY_HOME and $TRINOTATE_HOME as shortcuts to referring to their installation directories in the AMI image.  To view the path to the installation directories, you can simply run:
+Below, we refer to '%' as the terminal command prompt, and we use environmental variables such as $TRINITY_HOME and $TRINOTATE_HOME as shortcuts to referring to their installation directories in the AMI image.
+
+To configure your environment and set these variables, source the following settings:
+
+     % source ~/CourseData/RNA_data/trinity_trinotate_tutorial/OICR_RNASeq_2017_Workshop/Day3_Trinity/environment.txt 
+
+Now, to view the path to where Trinity is installed, you can simply:
 
      %   echo $TRINITY_HOME
 
-Also, some commands can be fairly long to type in, an so they'll be more easily displayed in this document, we separate parts of the command with '\' characters and put the rest of the command on the following line.  Similarly in unix you can type '\[return]' and you can continue to type in the rest of the command on the new line in the terminal.
+Some commands can be fairly long to type in, and so they'll be more easily displayed in this document, we separate parts of the command with '\' characters and put the rest of the command on the following line.  Similarly in unix you can type '\[return]' and you can continue to type in the rest of the command on the new line in the terminal.
 
 For viewing text files, we'll use the unix utilities 'head' (look at the top few lines), 'cat' (print the entire contents of the file), and 'less' (interactively page through the file), and for viewing PDF formatted files, we'll use the 'xpdf' viewer utility.
-
-Before we begin, let's slightly update our PATH setting to ensure certain Trinity-plugins will be found properly.
-
-    %   export PATH=$TRINITY_HOME/trinity-plugins/BIN/:${PATH}
 
 
 ### Data Content:
 
 For this course we will be using the data from this paper: Defining the transcriptomic landscape of Candida glabrata by RNA-Seq.  [Linde et al. Nucleic Acids Res. 2015](http://www.ncbi.nlm.nih.gov/pubmed/?term=25586221)    This work provides a detailed RNA-Seq-based analysis of the transcriptomic landscape of C. glabrata in nutrient-rich media (WT), as well as under nitrosative stress (GSNO), in addition to other conditions, but we'll restrict ourselves to just WT and GSNO conditions for demonstration purposes in this workshop.
 
-There are paired-end FASTQ formatted Illlumina read files for each of the two conditions, with three biological replicates for each.  All RNA-Seq data sets can be found in the data/ subdirectory:
+There are paired-end FASTQ formatted Illlumina read files for each of the two conditions, with three biological replicates for each.
+
+Copy the data over to your workspace like so:
+
+    % cp -r ~/CourseData/RNA_data/trinity_trinotate_tutorial/seq_data data
+
+
+All RNA-Seq data sets can be found in your new data/ subdirectory:
 
        %   ls -1 data | grep fastq
 
@@ -97,9 +104,6 @@ To generate a reference assembly that we can later use for analyzing differentia
               --right data/wt_SRR1582649_2.fastq,data/wt_SRR1582651_2.fastq,data/wt_SRR1582650_2.fastq,data/GSNO_SRR1582648_2.fastq,data/GSNO_SRR1582646_2.fastq,data/GSNO_SRR1582647_2.fastq \
               --CPU 2 --max_memory 2G --min_contig_length 150
 
->Note, if you see a message about not being able to identify the version of Java, please just ignore it.
-
-
 Running Trinity on this data set may take 10 to 15 minutes.  You'll see it progress through the various stages, starting with Jellyfish to generate the k-mer catalog, then followed by Inchworm to assemble 'draft' contigs, Chrysalis to cluster the contigs and build de Bruijn graphs, and finally Butterfly for tracing paths through the graphs and reconstructing the final isoform sequences. 
 
 Running a typical Trinity job requires ~1 hour and ~1G RAM per ~1 million PE reads. You'd normally run it on a high-memory machine and let it churn for hours or days.
@@ -133,7 +137,7 @@ It is often the case that multiple isoforms will be reconstructed for the same '
 
 ## Evaluating the assembly
 
-There are several ways to quantitatively as well as qualitatively assess the overall quality of the assembly, and we outline many of these methods at our [Trinity wiki](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Assembly-Quality-Assessment).  
+There are several ways to quantitatively as well as qualitatively assess the overall quality of the assembly, and we outline many of these methods at our [Trinity wiki](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Assembly-Quality-Assessment).
 
 
 ### Assembly Statistics that are *NOT* very useful
@@ -221,7 +225,7 @@ Now, align the reads to the assembly:
 
     %   bowtie2 --local --no-unal -x trinity_out_dir/Trinity.fasta \
           -q -1 data/wt_SRR1582651_1.fastq -2 data/wt_SRR1582651_2.fastq \
-          | samtools view -Sb - | samtools sort -o - - > bowtie2.nameSorted.bam
+          | samtools view -Sb - | samtools sort -o bowtie2.coordSorted.bam
 
 
 .
@@ -297,8 +301,8 @@ Let's start with one of the GSNO treatment fastq pairs like so:
              --right data/GSNO_SRR1582648_2.fastq  \
              --transcripts trinity_out_dir/Trinity.fasta  \
              --output_prefix GSNO_SRR1582648 \
-             --est_method RSEM  --aln_method bowtie \
-             --trinity_mode --prep_reference --coordsort_bam \
+             --est_method RSEM  --aln_method bowtie2 \
+             --trinity_mode --prep_reference \
              --output_dir GSNO_SRR1582648.RSEM
 
 The outputs generated from running the command above will exist in the GSNO_SRR1582648.RSEM/ directory, as we indicate with the --output_dir parameter above.
@@ -361,8 +365,7 @@ Process fastq pair 2:
              --right data/GSNO_SRR1582646_2.fastq \
              --transcripts trinity_out_dir/Trinity.fasta \
              --output_prefix GSNO_SRR1582646 \
-             --est_method RSEM  --aln_method bowtie \
-             --trinity_mode --prep_reference --coordsort_bam  \
+             --est_method RSEM  --aln_method bowtie2 --trinity_mode \
              --output_dir GSNO_SRR1582646.RSEM
 
 
@@ -373,8 +376,7 @@ Process fastq pair 3:
         --right data/GSNO_SRR1582647_2.fastq \
         --transcripts trinity_out_dir/Trinity.fasta  \
         --output_prefix GSNO_SRR1582647 \
-        --est_method RSEM --aln_method bowtie --trinity_mode \
-        --prep_reference --coordsort_bam  \
+        --est_method RSEM --aln_method bowtie2 --trinity_mode \
         --output_dir GSNO_SRR1582647.RSEM
 
 
@@ -387,8 +389,7 @@ Process fastq pair 4:
          --right data/wt_SRR1582649_2.fastq \
          --transcripts trinity_out_dir/Trinity.fasta \
          --output_prefix wt_SRR1582649 \
-         --est_method RSEM  --aln_method bowtie --trinity_mode \
-         --prep_reference --coordsort_bam  \
+         --est_method RSEM  --aln_method bowtie2 --trinity_mode \
          --output_dir wt_SRR1582649.RSEM
 
 
@@ -399,8 +400,7 @@ Process fastq pair 5:
          --right data/wt_SRR1582651_2.fastq  \
          --transcripts trinity_out_dir/Trinity.fasta \
          --output_prefix wt_SRR1582651 \
-         --est_method RSEM  --aln_method bowtie --trinity_mode \
-         --prep_reference --coordsort_bam  \
+         --est_method RSEM  --aln_method bowtie2 --trinity_mode \
          --output_dir wt_SRR1582651.RSEM
 
 
@@ -411,8 +411,7 @@ Process fastq pair 6 (last one!!):
          --right data/wt_SRR1582650_2.fastq \
          --transcripts trinity_out_dir/Trinity.fasta \
          --output_prefix wt_SRR1582650\
-         --est_method RSEM  --aln_method bowtie --trinity_mode \
-         --prep_reference --coordsort_bam  \
+         --est_method RSEM  --aln_method bowtie2 --trinity_mode \
          --output_dir wt_SRR1582650.RSEM
 
 
@@ -534,7 +533,6 @@ Although we outline above several of the reasons for why the contig N50 statisti
             trinity_out_dir/Trinity.fasta > ExN50.stats
 
 
-
 View the contents of the above output file:
 
     % cat ExN50.stats  | column -t
@@ -597,7 +595,7 @@ Try plotting the ExN50 statistics:
 
     % $TRINITY_HOME/util/misc/plot_ExN50_statistic.Rscript ExN50.stats
     
-    % xpdf ExN50.stats.plot.pdf
+>View the file 'ExN50.stats.plot.pdf' in your web browser.
 
 
 <img src="images/ExN50_stats.png" width=450 />
@@ -621,17 +619,33 @@ You can see that as you sequence deeper, you'll end up with an assembly that has
 
 ### Using IGV to examine read support for assembled transcripts
 
-Every assembled transcript is only as valid as the reads that support it.  If you ever want to examine the read support for one of your favorite transcripts, you could do this using the IGV browser.  Earlier, when running RSEM to estimate transcript abundance, we generated bam files containing the reads aligned to the assembled transcripts.  Launch IGV on these data like so:
+Every assembled transcript is only as valid as the reads that support it.  If you ever want to examine the read support for one of your favorite transcripts, you could do this using the IGV browser.  Earlier, when running RSEM to estimate transcript abundance, we generated bam files containing the reads aligned to the assembled transcripts.
 
-    % igv.sh -g trinity_out_dir/Trinity.fasta \
-        GSNO_SRR1582648.RSEM/GSNO_SRR1582648.bowtie.csorted.bam,GSNO_SRR1582646.RSEM/GSNO_SRR1582646.bowtie.csorted.bam,GSNO_SRR1582647.RSEM/GSNO_SRR1582647.bowtie.csorted.bam,wt_SRR1582651.RSEM/wt_SRR1582651.bowtie.csorted.bam,wt_SRR1582649.RSEM/wt_SRR1582649.bowtie.csorted.bam,wt_SRR1582650.RSEM/wt_SRR1582650.bowtie.csorted.bam
+Launch IGV from your desktop, load the 'trinity_out_dir/Trinity.fasta' file as the 'genome', and then load up the 'bowtie2.coordSorted.bam' file generated earlier. Note, IGV will require that you have an index for the bam file (a '.bai' file).  To generate this, use the 'samtools index' like so:
 
->Note, you could also launch IGV via clicking the icon on the desktop and then manually loading in the various input files via the menu, but that does take some time.  Launching it from the command line is rather straightforward and fast.
+Instructions for doing all of this are provided below:
+
+
+    # index the bam file
+    % samtools index bowtie2.coordSorted.bam
+
+    Download to your personal computer the files:
+        bowtie2.coordSorted.bam
+        bowtie2.coordSorted.bam.bai
+        trinity_out_dir/Trinity.fasta
+        (downloading can be done using an ftp client, or right-clicking / save-as from your web browser)
+
+    Load into IGV like so:
+        menu 'Genomes -> Load Genome from File'
+            select Trinity.fasta
+        menu 'File -> Load from File'
+            select bowtie2.coordSorted.bam 
+
 
 <img src="images/igv_trans_view.png" width=450 />
 
 
-Take some time to familiarize yourself with IGV. Look at a few transcripts and consider the read support. View the reads as pairs to examine the paired-read linkages. 
+Take some time to familiarize yourself with IGV. Look at a few transcripts and consider the read support. View the reads as pairs to examine the paired-read linkages (hint: right-click on the read panel, select 'view as pairs').
 
 
 
@@ -760,14 +774,11 @@ Note, the number of lines in this file includes the top line with column names, 
 Also included among these files is a heatmap 'diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf' as shown below, with transcripts clustered along the vertical axis and samples clustered along the horizontal axis.
 
 
-     % xpdf diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf
+>View the plot 'diffExpr.P1e-3_C2.matrix.log2.centered.genes_vs_samples_heatmap.pdf' from your web browser
 
 <img src="images/DE_genes_heatmap.png" width=450 />
 
 The expression values are plotted in log2 space and mean-centered (mean expression value for each feature is subtracted from each of its expression values in that row), and shows upregulated expression as yellow and downregulated expression as purple. 
-
-
->Exit the PDF viewer to continue.
 
 
 ## Extract transcript clusters by expression profile by cutting the dendrogram
@@ -802,7 +813,7 @@ Be sure you're in your base working directory:
 .
    
     /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017
-
+    #### --- must update !!!
 
 Now, run the DE analysis at the gene level like so:
 

@@ -13,13 +13,13 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 
 Now we have a bunch of transcript sequences and have identified some subset of them that appear to be biologically interesting in that they're differentially expressed between our two conditions - but we don't really know what they are or what biological functions they might represent.  We can explore their potential functions by functionally annotating them using our Trinotate software and analysis protocol.  To learn more about Trinotate, you can visit the [Trinotate website](http://trinotate.github.io/).
 
-Again, let's make sure that we're back in our primary working directory called 'KrumlovTrinityWorkshopJan2017':
+Again, let's make sure that we're back in our primary working directory called '***************************':  !!!!!!!!!!!!
 
     % pwd
 
 .
 
-    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017
+    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017    *********************  !!!!!!!!!!
 
 If you're not in the above directory, then relocate yourself to it.
 
@@ -55,7 +55,7 @@ You'll now find a number of output files containing 'transdecoder' in their name
     Trinity.fasta.transdecoder.bed
     Trinity.fasta.transdecoder.cds
     Trinity.fasta.transdecoder.gff3
-    Trinity.fasta.transdecoder.pep    
+    Trinity.fasta.transdecoder.pep
     Trinity.fasta.transdecoder_dir/
 
 
@@ -157,7 +157,7 @@ As a sanity check, be sure you're currently located in your 'Trinotate/' working
     % pwd
 .
 
-    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017/Trinotate
+    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017/Trinotate   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 Copy the provided Trinotate.sqlite boilerplate database into your Trinotate working directory like so:
@@ -284,7 +284,7 @@ TrinotateWeb is web-based software and runs locally on the same hardware we've b
     % $TRINOTATE_HOME/run_TrinotateWebserver.pl 3000
 
 
-Now, visit the following URL in Google Chrome: <http://localhost:3000/cgi-bin/index.cgi>
+Now, visit the following URL in Google Chrome: <http://${YOUR_IP_ADDRESS}:3000/cgi-bin/index.cgi>
 
 You should see a web form like so:
 
