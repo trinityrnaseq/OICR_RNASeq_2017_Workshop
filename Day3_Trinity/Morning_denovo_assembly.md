@@ -732,16 +732,13 @@ The files '*.DE_results' contain the output from running EdgeR to identify diffe
 
 These data include the log fold change (logFC), log counts per million (logCPM), P- value from an exact test, and false discovery rate (FDR).
 
-The EdgeR analysis above generated both MA and Volcano plots based on these data. Examine any of these like so:
+The EdgeR analysis above generated both MA and Volcano plots based on these data.
 
-    %  xpdf edgeR_trans/Trinity_trans.counts.matrix.GSNO_vs_WT.edgeR.DE_results.MA_n_Volcano.pdf
+>View the plot file 'edgeR_trans/Trinity_trans.counts.matrix.GSNO_vs_WT.edgeR.DE_results.MA_n_Volcano.pdf' in your web browser.
 
 <img src="images/volcano_plots.png" width=450 />
 
 The red data points correspond to all those features that were identified as being significant with an FDR <= 0.05.
-
-
->Exit the chart viewer to continue.
 
 
 Trinity facilitates analysis of these data, including scripts for extracting transcripts that are above some statistical significance (FDR threshold) and fold-change in expression, and generating figures such as heatmaps and other useful plots, as described below.
