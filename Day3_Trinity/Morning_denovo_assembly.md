@@ -788,7 +788,7 @@ Extract clusters of transcripts with similar expression profiles by cutting the 
 This creates a directory containing the individual transcript clusters, including a pdf file that summarizes expression values for each cluster according to individual charts:
 
 
-     % xpdf diffExpr.P1e-3_C2.matrix.RData.clusters_fixed_P_60/my_cluster_plots.pdf
+>View plots file 'diffExpr.P1e-3_C2.matrix.RData.clusters_fixed_P_60/my_cluster_plots.pdf' from your web browser.
 
 <img src="images/DE_clusters.png" width=450 />
 
