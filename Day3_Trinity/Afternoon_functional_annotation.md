@@ -13,13 +13,13 @@ home: https://bioinformaticsdotca.github.io/rnaseq_2017
 
 Now we have a bunch of transcript sequences and have identified some subset of them that appear to be biologically interesting in that they're differentially expressed between our two conditions - but we don't really know what they are or what biological functions they might represent.  We can explore their potential functions by functionally annotating them using our Trinotate software and analysis protocol.  To learn more about Trinotate, you can visit the [Trinotate website](http://trinotate.github.io/).
 
-Again, let's make sure that we're back in our primary working directory called '***************************':  !!!!!!!!!!!!
+Again, let's make sure that we're back in our primary working directory called 'trinity_workspace':
 
     % pwd
 
 .
 
-    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017    *********************  !!!!!!!!!!
+    /home/ubuntu/workspace/trinity_workspace
 
 If you're not in the above directory, then relocate yourself to it.
 
