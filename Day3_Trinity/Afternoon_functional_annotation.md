@@ -40,7 +40,7 @@ Below, we're going to run a number of different tools to capture information abo
 
 Running TransDecoder is a two-step process.  First run the TransDecoder step that identifies all long ORFs.
 
-    % $TRANSDECODER_HOME/TransDecoder.LongOrfs -t ../trinity_out_dir/Trinity.fasta
+     % $TRANSDECODER_HOME/TransDecoder.LongOrfs -t ../trinity_out_dir/Trinity.fasta
 
 Now, run the step that predicts which ORFs are likely to be coding.
 
@@ -117,7 +117,7 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 Using our predicted protein sequences, let's also run a HMMER search against the Pfam database, and identify conserved domains that might be indicative or suggestive of function:
 
     % hmmscan --cpu 2 --domtblout TrinotatePFAM.out \
-              ../../trinotate_databases/Pfam-A.hmm \
+              ~/CourseData/RNA_data/trinity_trinotate_tutorial/trinotate_data/Pfam-A.hmm \
               Trinity.fasta.transdecoder.pep
 
 >Note, hmmscan might take a few minutes to run.
