@@ -657,10 +657,11 @@ A plethora of tools are currently available for identifying differentially expre
 
 Having biological replicates for each of your samples is crucial for accurate detection of differentially expressed transcripts.  In our data set, we have three biological replicates for each of our conditions, and in general, having three or more replicates for each experimental condition is highly recommended.
 
-Create a samples.txt file containing the contents below (tab-delimited), indicating the name of the condition followed by the name of the biological replicate.   Verify the contents of the file using 'cat':
+    Create a samples.txt file containing the contents below (tab-delimited), indicating
+    the name of the condition followed by the name of the biological replicate.
+    Verify the contents of the file using 'cat':
 
-
-**Use your favorite unix text editor (eg. emacs, vim, pico, or nano) to create the file 'samples.txt' containing the tab-delimited contents below**.  Then verify the contents like so: 
+>**Use your favorite unix text editor (eg. emacs, vim, pico, or nano) to create the file 'samples.txt' containing the tab-delimited contents below**.  Then verify the contents like so: 
 
     % cat samples.txt
 
