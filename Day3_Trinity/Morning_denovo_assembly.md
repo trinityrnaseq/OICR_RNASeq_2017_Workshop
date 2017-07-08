@@ -629,6 +629,8 @@ Instructions for doing all of this are provided below:
     # index the bam file
     % samtools index bowtie2.coordSorted.bam
 
+.
+
     Download to your personal computer the files:
         bowtie2.coordSorted.bam
         bowtie2.coordSorted.bam.bai
