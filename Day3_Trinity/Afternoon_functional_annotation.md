@@ -251,7 +251,7 @@ Once again, verify that you're currently in the Trinotate/ working directory:
 
 .
 
-    /home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017/Trinotate
+    /home/ubuntu/workspace/trinity_workspace/Trinotate
 
 Now, load in the transcript expression data stored in the matrices we built earlier:
 
