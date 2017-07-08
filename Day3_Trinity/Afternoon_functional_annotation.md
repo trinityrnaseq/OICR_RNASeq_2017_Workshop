@@ -312,13 +312,13 @@ Now, visit the following URL in Google Chrome: <http://${YOUR_IP_ADDRESS}:3000/c
 
 You should see a web form like so:
 
-<img src="https://raw.githubusercontent.com/wiki/trinityrnaseq/KrumlovTrinityWorkshopJan2017/images/TrinotateWeb_entrypoint2017.png" width=450 />
+<img src="images/TrinotateWeb_entrypoint2017.png" width=450 />
 
 In the text box, put the path to your Trinotate.sqlite database, as shown above ("/home/genomics/workshop_materials/transcriptomics/KrumlovTrinityWorkshopJan2017/Trinotate/Trinotate.sqlite").  Click 'Submit'.
 
 You should now have TrinotateWeb running and serving the content in your Trinotate database:
 
-<img src="https://raw.githubusercontent.com/wiki/trinityrnaseq/KrumlovTrinityWorkshopJan2017/images/TrinotateWeb_homepage.png" width=450 />
+<img src="images/TrinotateWeb_homepage.png" width=450 />
 
 Take some time to click the various tabs and explore what's available.
 
