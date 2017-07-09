@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /rnaseq_2017_prework
+permalink: /rnaseq_2017_tutorial7
 title: RNA-Seq
 header1: Workshop Pages for Students
 header2: Informatics for RNA-Seq Analysis
