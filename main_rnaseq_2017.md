@@ -20,9 +20,8 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 # Class Photo
  
-<img src="" alt="Class Photo" width="750" />
+<img src="https://github.com/bioinformaticsdotca/RNASeq_2017/blob/master/CBW-July-10.jpg?raw=true" alt="Class Photo" width="750" />
 
-Coming soon!
 
 # Day 1 <a id="day1"></a>
 
