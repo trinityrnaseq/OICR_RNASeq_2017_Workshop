@@ -163,11 +163,15 @@ For additional resources, tutorials, future directions, and more please refer to
 
 [Lecture](https://bioinformatics.ca/rnaseq-2017-mod6)  
 
+[Lab practical](https://bioinformaticsdotca.github.io/rnaseq_2017_tutorial6)  
+
 
 ## Module 7: Functional Annotation and Analysis of Transcripts
 
 *<font color="#827e9c">Brian Haas</font>* 
 
 [Lecture](https://bioinformatics.ca/rnaseq-2017-mod7)  
+
+[Lab practical](https://bioinformaticsdotca.github.io/rnaseq_2017_tutorial7)  
 
 ***
