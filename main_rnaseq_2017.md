@@ -177,3 +177,5 @@ For additional resources, tutorials, future directions, and more please refer to
 [Lab practical](https://bioinformaticsdotca.github.io/rnaseq_2017_tutorial7)  
 
 ***
+
+https://goo.gl/forms/u6Ifq7KdegnpFXHx1
