@@ -163,6 +163,8 @@ For additional resources, tutorials, future directions, and more please refer to
 
 [Lecture](https://bioinformatics.ca/rnaseq-2017-mod6)  
 
+[Bandage](https://rrwick.github.io/Bandage/)  
+
 [Lab practical](https://bioinformaticsdotca.github.io/rnaseq_2017_tutorial6)  
 
 
