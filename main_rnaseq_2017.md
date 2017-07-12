@@ -178,4 +178,4 @@ For additional resources, tutorials, future directions, and more please refer to
 
 ***
 
-https://goo.gl/forms/u6Ifq7KdegnpFXHx1
+Thank you for attending the Informatics and RNA-Seq Analysis workshop! Help us make this workshop better by filling out [our survey](https://goo.gl/forms/u6Ifq7KdegnpFXHx1)
