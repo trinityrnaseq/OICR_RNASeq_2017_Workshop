@@ -163,6 +163,8 @@ For additional resources, tutorials, future directions, and more please refer to
 
 [Lecture](https://bioinformatics.ca/rnaseq-2017-mod6)  
 
+[Bandage](https://rrwick.github.io/Bandage/)  
+
 [Lab practical](https://bioinformaticsdotca.github.io/rnaseq_2017_tutorial6)  
 
 
@@ -175,3 +177,5 @@ For additional resources, tutorials, future directions, and more please refer to
 [Lab practical](https://bioinformaticsdotca.github.io/rnaseq_2017_tutorial7)  
 
 ***
+
+Thank you for attending the Informatics and RNA-Seq Analysis workshop! Help us make this workshop better by filling out [our survey](https://goo.gl/forms/u6Ifq7KdegnpFXHx1)
